@@ -42,7 +42,14 @@ struct ContentView: View {
             
                 ForEach(Cities, id:\.name) { city in
                     NavigationLink(destination: CityDetails(city:city)) {
-                        Text(city.name)
+                        VStack {
+                            Image(city.image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width:300, height:200)
+                            Text(city.name)
+                        }
+                        
                     }
                 }
                 
